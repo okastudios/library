@@ -1,0 +1,22 @@
+{
+
+  "name": "okastudios/library",
+  "type": "library",
+  "description": "Main (and required) library with all logic for the oka framework",
+  "keywords": ["php", "framework", "mvc", "lightweight", "fast"],
+  "homepage": "https://github.com/okastudios/framework",
+
+  "authors": [
+    {
+      "name": "Ole K. Aanensen",
+      "email": "ole@okastudios.com"
+    }
+  ],
+
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  }
+
+}
