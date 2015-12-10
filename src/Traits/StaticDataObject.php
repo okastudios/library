@@ -42,4 +42,13 @@ trait StaticDataObject
         self::$data[$name] = $value;
     }
 
+    /**
+     * @return array
+     */
+    public static function GetData()
+    {
+        return self::$data;
+    }
+
+
 }
