@@ -35,17 +35,6 @@ class Debug
     }
 
     /**
-     * Trace callback to this function and then prints it
-     */
-    public static function PrintTrace()
-    {
-        $obj = debug_backtrace();
-        unset($obj[0]);
-
-        self::Dump($obj);
-    }
-
-    /**
      * Converts variable that is passed to readable format
      * and prints it out
      * @param mixed $obj
