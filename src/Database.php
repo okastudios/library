@@ -34,7 +34,7 @@ class Database {
         {
 
             // Connect to database
-            $credentials = \App\Config\Database::GetAll();
+            $credentials = \App\Config\Database::GetData();
             self::$connection = new Database\Connection(
                 $credentials['dsn'],
                 $credentials['username'],
