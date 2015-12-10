@@ -33,16 +33,12 @@ class Connection extends \PDO
         {
             case "SELECT":
                 $response = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-                if($translateRows)
-                {
+                if(empty($response))
+                    $response = null;
+                elseif($translateRows && count($response) == 1) {
+                    $response = end($response);
                     if(count($response) == 1)
-                    {
                         $response = end($response);
-                        if(count($response) == 1)
-                        {
-                            $response = end($response);
-                        }
-                    }
                 }
 
                 return $response;
