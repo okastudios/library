@@ -30,7 +30,7 @@ class Debug
         $obj = debug_backtrace();
         unset($obj[0]);
 
-        return self::Dump($obj);
+        return self::DumpSilent($obj);
 
     }
 
@@ -42,15 +42,26 @@ class Debug
         $obj = debug_backtrace();
         unset($obj[0]);
 
-        echo self::Dump($obj);
+        self::Dump($obj);
     }
+
+    /**
+     * Converts variable that is passed to readable format
+     * and prints it out
+     * @param mixed $obj
+     */
+    public static function Dump($obj)
+    {
+        echo self::DumpSilent($obj);
+    }
+
 
     /**
      * Converts variable that is passed to readable format
      * @param mixed $obj
      * @return string
      */
-    public static function Dump($obj)
+    public static function DumpSilent($obj)
     {
         ob_start();
         if(is_null($obj) || is_bool($obj) || is_string($obj))

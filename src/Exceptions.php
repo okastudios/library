@@ -145,7 +145,7 @@ class Exceptions {
         if(\App\Application::$debug)
         {
             $name = 'Default/500/Debug';
-            $report = Misc\Debug::Dump(self::$displayData);
+            $report = Misc\Debug::DumpSilent(self::$displayData);
         } else
         {
             $name = 'Default/500/Error';
