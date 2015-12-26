@@ -62,6 +62,17 @@ class Debug
     }
 
     /**
+     * Dumps variable and kills script
+     * *** Must only be used for developing purposes ***
+     * @param mixed $obj
+     */
+    public static function Kill($obj)
+    {
+        echo self::DumpSilent($obj);
+        exit;
+    }
+
+    /**
      * @param int $type
      * @return string
      */
