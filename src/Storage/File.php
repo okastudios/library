@@ -140,6 +140,7 @@ class File {
     {
         if(is_null($header))
         {
+            $extension  = pathinfo($this->basename, PATHINFO_EXTENSION);
             $extensions = array(
                 'txt'   =>  'text/plain',
                 'xml'   =>  'text/xml',
@@ -154,7 +155,7 @@ class File {
                 'gif'   =>  'image/gif'
             );
 
-            $header = isset($extensions[$this->getExtension()])?$extensions[$this->getExtension()]:null;
+            $header = isset($extensions[$extension])?$extensions[$extension]:null;
         }
 
         if(!is_null($header))
